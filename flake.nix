@@ -8,7 +8,7 @@
     let
         system = "aarch64-linux";
         pkgs = import nixpkgs {inherit system;};
-        lib = pkgs.lib
+        lib = pkgs.lib;
     in {
         nixosModules = {
             uconsole = import ./uconsole { inherit pkgs inputs lib; };
