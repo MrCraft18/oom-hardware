@@ -1,7 +1,7 @@
 {
   config,
   lib,
-  nixos-hardware,
+  inputs,
   pkgs,
   ...
 }: let
@@ -15,7 +15,7 @@ in {
   };
 
   imports =
-    [nixos-hardware.nixosModules.raspberry-pi-4]
+    [inputs.nixos-hardware.nixosModules.raspberry-pi-4]
     ++ [../raspberry-pi/overlays]
     ++ [../raspberry-pi/apply-overlays];
 
