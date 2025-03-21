@@ -8,10 +8,11 @@
     let
         system = "aarch64-linux";
         pkgs = import nixpkgs {inherit system;};
+        lib = pkgs.lib
     in {
         nixosModules = {
-            uconsole = import ./uconsole {inherit pkgs inputs;};
-            deskpi = import ./deskpi {inherit pkgs inputs;};
+            uconsole = import ./uconsole { inherit pkgs inputs lib; };
+            deskpi = import ./deskpi { inherit pkgs inputs lib; };
             cm4 = import ./cm4;
         };
     };
